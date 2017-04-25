@@ -1,0 +1,107 @@
+body{
+    margin: 0;
+}
+.sea{
+     background-image: url(seabackgroung.png);
+     background-size: cover;
+     background-repeat: repeat;
+     animation: seamov 30s linear infinite;
+     height: 100vh;
+
+}
+.sea img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+
+}
+.sun{
+    opacity: 1;
+    z-index: 1;
+
+}
+.sunglasses{
+    opacity: 0;
+}
+.sun:hover + .sunglasses{
+    opacity: 1;
+}
+.sun:hover{
+    opacity: 0;
+}
+.sunpics{
+transition: transform 1s infinite;
+
+}
+.bird{
+    background-image: url(birdflying.png);
+    position: fixed;
+    top: 35%;
+    width: 175px;
+    height: 165px;
+    animation: birdflying 1s steps(14) infinite, movbird 5s steps(100) infinite;
+    left: -10px;
+}
+.ship-container{
+    height:240px;
+    width: 960px;
+    position: fixed;
+    left:-200px;
+    animation: shipcont 10s linear infinite;
+
+
+
+}
+
+.ship{
+    background: url("shipheartsip.png")0 0 repeat;
+    display: block;
+    width:173px;
+    height: 100%;
+    margin-top:-250px;
+    animation:
+        shipmov 2s steps(5,end) infinite,
+        shipwaves 2s infinite alternate ease-in-out;
+
+}
+/*.waves-container{
+         height:193px;
+         width: 480px;
+
+
+}
+.waves{
+    background: url(waves.png);
+    display: block;
+}*/
+
+@keyframes seamov{
+    from{background-position: 0 0}
+    to{background-position: 1024px 0}
+}
+@keyframes birdflying{
+
+    100%{background-position:-2571px ; }
+}
+@keyframes movbird {
+    100%{
+        left: 100%;
+    }
+
+}
+@keyframes shipcont{
+
+    to{left:100%;}
+
+}
+@keyframes shipmov {
+    from{background-position: 0 0}
+    to{background-position: -960px 0}
+
+}
+@keyframes shipwaves {
+    from{transform: rotate(10deg);}
+    to{transform: rotate(-10deg);}
+
+}
